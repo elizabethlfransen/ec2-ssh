@@ -1,0 +1,21 @@
+{
+  "name": "ec2-ssh",
+  "module": "index.ts",
+  "type": "module",
+  "version": "0.1.0",
+  "private": "true",
+  "devDependencies": {
+    "@types/prompts": "^2.4.4",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "bin": {
+    "ec2-ssh": "index.ts"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "prompts": "^2.4.2"
+  }
+}
