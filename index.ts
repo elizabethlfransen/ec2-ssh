@@ -52,6 +52,10 @@ const response = await prompts({
   })),
 });
 
+if(response.instance == undefined) {
+  process.exit(0);
+}
+
 const instance: EC2Instance = response.instance;
 
 const keyPath = await findKey(response.instance.KeyName);

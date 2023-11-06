@@ -16,7 +16,7 @@ export interface EC2Instance {
 }
 
 export async function getEC2Instances(): Promise<EC2Instance[]> {
-    const proc = Bun.spawn(["aws", "ec2", "describe-instances","--output=json"], {
+    const proc = Bun.spawn(["aws", "ec2", "describe-instances","--output=json", "--filter", "Name=instance-state-name,Values=running"], {
         stderr: "pipe"
     });
     const errorText = await readableStreamToText(proc.stderr);
